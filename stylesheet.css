@@ -1,0 +1,351 @@
+*{
+
+   margin: 0;
+   padding: 0;
+
+}
+
+body{
+
+background-color: black;
+overflow: hidden;
+
+}
+
+.FLY-IN{
+
+list-style: none;
+position: absolute;
+left: 50%;
+top:50%;
+transform: translateX(-50%) translateY(-50%);
+}
+
+.FLY-IN li{
+
+display: inline-block;
+color:white;
+margin-right: 50px;
+font-family: 'Orbitron', sans-serif;
+font-size: 3em;
+opacity: 1;
+transition: all 2.5s ease;
+}
+
+.FLY-IN li:last-Child{
+	margin-right: 0;
+}
+
+.Hidden li{
+	opacity: 0;
+}
+
+.Loginbutton{
+cursor: pointer;	
+background-color: black;
+border: 3px solid white;
+padding: 1px;
+font-family: 'Orbitron', sans-serif;
+color:white;
+position: absolute;
+top: 60%;
+left:49%;
+opacity: 1;
+}
+
+.hiddenButton{
+
+	opacity: 0;
+}
+
+
+
+
+.Hidden li:nth-child(1) {
+
+transform: translateX(-200px) translateY(-200px);
+
+}
+
+.Hidden li:nth-child(2) {
+
+transform: translateX(20px) translateY(-200px);
+	
+}
+.Hidden li:nth-child(3) {
+
+transform: translateX(-150px) translateY(-80px);
+	
+}
+.Hidden li:nth-child(4) {
+
+transform: translateX(10px) translateY(-200px);
+	
+}
+.Hidden li:nth-child(5) {
+
+transform: translateX(-300px) translateY(200px);
+	
+}
+
+
+/*  AB HIER LOGIN-CSS */  
+
+.form{
+
+    border: 3px solid white;
+    border-radius: 25px;
+	width: 350px;
+	height: 350px;
+	margin: 0 auto;
+	margin-top: 150px;
+	text-align: center;
+	visibility: hidden;
+
+}
+
+.logininput{
+
+	height: 30px;
+	width: 200px;
+	font-size: 18px;
+	margin-bottom: 20px;
+	padding-left: 20px;
+	font-family: 'Orbitron', sans-serif;
+}
+
+i[class= "fa fa-user-circle fa fa-car fa-5x"]{
+
+	color:white;
+	margin-bottom: 40px;
+
+
+}
+
+
+#loginform p{
+
+    font-family: 'Orbitron', sans-serif;
+   font-size:x-small;
+	color:white;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.inputform::before{
+
+position: absolute;
+font-family: "FontAwesome";
+content:"\f007";
+font-size: 20px;
+padding-top: 6px;
+padding-left: 5px;
+}
+
+#lastinput::before {
+
+     	content:"\f023";
+
+}
+
+#loginsubmit{
+	cursor: pointer;	
+background-color: black;
+border: 3px solid white;
+border-radius: 3px;
+padding: 5px;
+font-family: 'Orbitron', sans-serif;
+color:white;
+opacity: 1;
+margin-bottom:20px;
+}
+
+#google-btn{                       
+	position:absolute;	
+	background-color: black;
+	color:white;
+	border-radius: 5px;
+	border-color: white;
+	font-family: 'Orbitron', sans-serif;
+	cursor: pointer;
+	padding: 5px;
+    bottom:50px;
+	right:35px;
+	opacity: 0;
+
+}
+
+#google-btn:hover{
+	background-color: #333333;
+}
+
+/*Username-Error*/
+
+
+#UserErrordiv{
+
+ 
+  background:black;
+  width: 400px;
+  height: 50px;
+  position: absolute;
+ top:30%;
+ right:10%;
+
+
+}
+
+#UserErrordiv p{
+  position:absolute;
+  text-align: center;
+  color:white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#Khaledgif{
+position: absolute;
+left: 15px;
+}
+
+/*LOGIN ERROR DIV*/
+
+#LoginErrordiv{
+
+ 
+  background:black;
+  width: 400px;
+  height: 50px;
+  position: absolute;
+ top:30%;
+ right:10%;
+
+
+}
+
+#LoginErrordiv p{
+  position:absolute;
+  text-align: center;
+  color:white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#Khaledgiflog{
+position: absolute;
+left: 15px;
+}
+
+/* AB HIER REGISTER-FORM CSS */
+
+#Registration-Heading{
+
+	color:white;
+	font-family: 'Orbitron', sans-serif;
+	font-size: x-large;
+	font-weight:bold;
+	text-decoration: underline;
+	margin-top: 23px;
+	margin-bottom: 50px;
+}
+
+#register-div{
+
+    border: 3px solid white;
+    border-radius: 25px;
+	width: 350px;
+	height: 350px;
+	margin: 0 auto;
+	margin-top: 150px;
+	text-align: center;
+	opacity: 0;
+
+}
+
+
+
+.registerinput{
+
+	height: 30px;
+	width: 200px;
+	font-size: 18px;
+	margin-bottom: 30px;
+	padding-left: 20px;
+	font-family: 'Orbitron', sans-serif;
+}
+
+i[class="fa fa-arrow-circle-left fa-2x"]{
+	color:white;
+	cursor: pointer;
+	
+}
+
+
+.register-inputform::before{
+
+position: absolute;
+font-family: "FontAwesome";
+content:"\f007";
+font-size: 20px;
+padding-top: 6px;
+padding-left: 5px;
+}
+
+#lastinput-register::before {
+
+     	content:"\f023";
+
+}
+
+#register-submit{
+	cursor: pointer;	
+background-color: black;
+border: 3px solid white;
+border-radius: 3px;
+padding: 5px;
+font-family: 'Orbitron', sans-serif;
+color:white;
+opacity: 1;
+margin-bottom:20px;
+}
+
+/*Vue Transitions*/
+
+
+.register-transition{
+
+	transition: all .5s ease;
+
+
+
+}
+
+.register-enter{
+  
+  opacity: 1;
+
+}
+
+.register-leave{
+
+ opacity:0;
+
+}
+
+
+
+.menubutton-transition{
+
+transition: all .5s ease;
+
+}
+
+.menubutton-enter{
+
+
+
+}
+
+.menubutton-leave{
+
+
+	
+}
