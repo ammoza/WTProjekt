@@ -38,7 +38,7 @@ login: function(e){
         {
             this.username = "";
             this.password = "";
-            this.seen = true;
+            this.$data.seen = true;
 
         }
 
