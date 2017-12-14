@@ -20,8 +20,11 @@
 <body>
 
 <script type="text/javascript" src="javascript.js" defer></script>
+
+
 <!-- ab hier HTML-Code -->
 
+<div id="start">
 
 <ul class="FLY-IN Hidden">
 	<li>L</li>
@@ -31,8 +34,8 @@
 	<li>T</li>
 	
 </ul>
-<div id="start">
-<button id="Menubutton" class="Loginbutton hiddenButton" v-on:click="loginform" transition="menubutton">LOGIN</button>
+
+<button id="Menubutton" class="Loginbutton hiddenButton" v-on:click="loginform">LOGIN</button>
 
 <!--LoginForm -->
 <div class="form">
@@ -98,17 +101,6 @@
 	<i id="backToLogin" class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" v-on:click="backToLogin"></i>
 	
 </div>
-
-<!--UserName Error -->
-<!--
-<div id="UserErrordiv" v-if="seen">	
-<p>
-Name is already used take another one !
-</p>
-<video id="Khaledgif" width="320" height="240" autoplay loop>
-  <source src="C:\Users\Amir\Desktop\Projekt WT\Gifs\Dj-Khaled.mp4" type="video/mp4">
-  </video>
-</div>-->
 
 <a id="google-btn"><i class="fa fa-google" aria-hidden="true"></i> Sign in with Google</a>
 

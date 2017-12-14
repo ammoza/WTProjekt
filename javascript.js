@@ -132,17 +132,29 @@ var firstButton = new Vue({
 
    el: "#start",
 
-   methods:{
+    
+   mounted: function(){
 
+
+       setTimeout(function(){
+       $("ul").removeClass('Hidden');
+       },500);
+
+
+       setTimeout(function(){
+       $("#Menubutton").removeClass('hiddenButton');
+       },3000);
+
+
+   },
+   
+
+
+   methods:{
+    
    loginform: function(){
 
 
-
-
-
-    
-
-/*
             $("#Menubutton").fadeToggle();
             setTimeout(function(){
             $("ul").fadeToggle("slow");
@@ -157,7 +169,7 @@ var firstButton = new Vue({
 
             $("ul").addClass('Hidden');
             $("#Menubutton").addClass('hiddenButton');
-*/
+
    }
     
 
@@ -170,17 +182,6 @@ var firstButton = new Vue({
 
 $(document).ready(function(){
 
-/*Einblenden von Legit */
-
-setTimeout(function(){
-$("ul").removeClass('Hidden');
-},500);
-
-setTimeout(function(){
-$("#Menubutton").removeClass('hiddenButton');
-},3000);
-
-/*Wenn noch kein Account dann click --> Login verschwindet Registerform kommt */
 
 $("#toRegisterForm").click(function(){
 $('.form, #google-btn').fadeOut(1000);
@@ -191,23 +192,6 @@ $("#register-div").animate({opacity: 1}, {duration: 500, queue:false});
 
 })
 
-/*Von Register-Form zurück zu Login-Form*/
-/*
-$("#backToLogin").click(function(){
-
-$("#UserErrordiv").css("visibility","hidden");
-$("#register-div").animate({opacity: 0}, {duration: 500, queue:false});
-    
-setTimeout(function(){
-$(".form").fadeIn(1000);},1000);
-setTimeout(function(){
-$("#google-btn").fadeIn(1500);},2000);
-
-
-});
-
-
-*/
 
 
 });
