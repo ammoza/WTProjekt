@@ -1,5 +1,3 @@
-//import VueResource from "vue-resource";
-
 
 //Host-Adressen und token variable
 
@@ -15,9 +13,11 @@ var loginform = new Vue({
 el: "#loginform",
 data: {
 
-// seen:false,
+ seen:false,
  username:"",
- password:"" 
+ password:"" ,
+ RegisterLink:"Don't have an Account? Click here to Register",
+ ErrorMessage:"Username or password is wrong!"
  
 },
 
@@ -50,29 +50,8 @@ login: function(e){
         
 
 });
-//Google Login
-
-
-function onSignIn(){
-    var googleUser = gapi.auth2.getAuthInstance().currentUser.get()
-    var profile = googleUser.getBasicProfile()
-    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-    console.log('Full Name: ' + profile.getName());
-    console.log('Given Name: ' + profile.getGivenName());
-    console.log('Family Name: ' + profile.getFamilyName());
-}
-
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-
-
 
 //Account-Registrieren Register-Request
-
 
 var registerform = new Vue ({
 
@@ -82,7 +61,9 @@ data: {
 
  seen: false,
  username:"",
- password:"" 
+ password:"" ,
+ RegHeading:"Create an Account",
+ ErrorMessage:"Name is already used take another one !"
  
 },
 
@@ -97,7 +78,7 @@ register: function(e){
             console.log("Success");}
     
         if(res.body.Status === "Error"){
-        //$("#UserErrordiv").css("visibility","visible");
+        
              this.$data.seen = true;
              this.username = "";
              this.password = "";
@@ -126,9 +107,10 @@ backToLogin: function(){
 }
 });
 
+// Mounted-Funktion 
 // LoginForm erscheint nach Button Click
 
-var firstButton = new Vue({
+var firstVue = new Vue({
 
    el: "#start",
 
@@ -162,11 +144,6 @@ var firstButton = new Vue({
             setTimeout(function(){
             $(".form").css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 'slow')
             },2000);
-
-            setTimeout(function(){
-            $("#google-btn").css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 'slow')
-            },3000);
-
             $("ul").addClass('Hidden');
             $("#Menubutton").addClass('hiddenButton');
 
@@ -195,3 +172,6 @@ $("#register-div").animate({opacity: 1}, {duration: 500, queue:false});
 
 
 });
+
+
+

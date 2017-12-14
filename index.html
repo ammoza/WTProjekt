@@ -2,10 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="234305711819-38jvgdltbbh72rmvpmctqb76brsm04i1.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" defer></script>
-    <script src="login.js" defer></script>
+
 	<title>Legit-Startbildschirm</title>
 	<meta charset="UTF-8">
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
@@ -53,14 +50,14 @@
 		<input id="loginsubmit" type="submit" name="submit" value="LOGIN" v-on:click="login">
 
 
-     <p id="toRegisterForm">Don't have an Account? Click here to Register</p>
+     <p id="toRegisterForm">{{RegisterLink}}</p>
 
      
-     <div id="LoginErrordiv" v-if="seen">	
+     <div id="UserErrordiv" v-if="seen">	
        <p>
-      Username or password is wrong!
+      {{ErrorMessage}}
       </p>
-     <video id="Khaledgiflog" width="320" height="240" autoplay loop>
+     <video id="Khaledgif" width="320" height="240" autoplay loop>
      <source src="C:\Users\Amir\Desktop\Projekt WT\Gifs\Dj-Khaled.mp4" type="video/mp4">
      </video>
 
@@ -73,7 +70,7 @@
 <!--RegisterForm-->
 
 <div id="register-div" transition="register">
-    <p id="Registration-Heading">Create an Account</p>
+    <p id="Registration-Heading">{{RegHeading}}</p>
 	<form id="registerform">
 		<div class="register-inputform">
 		<input class="registerinput" id= "registername" type="text" placeholder="Username" v-model="username">
@@ -88,7 +85,7 @@
 
      <div id="UserErrordiv" v-if="seen">	
        <p>
-      Name is already used take another one !
+      {{ErrorMessage}}
       </p>
      <video id="Khaledgif" width="320" height="240" autoplay loop>
      <source src="C:\Users\Amir\Desktop\Projekt WT\Gifs\Dj-Khaled.mp4" type="video/mp4">
@@ -101,12 +98,6 @@
 	<i id="backToLogin" class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" v-on:click="backToLogin"></i>
 	
 </div>
-
-<a id="google-btn"><i class="fa fa-google" aria-hidden="true"></i> Sign in with Google</a>
-
- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-  <button onclick="signOut()">Sign Out</button>
-
 
 </body>
 </html>

@@ -160,24 +160,6 @@ opacity: 1;
 margin-bottom:20px;
 }
 
-#google-btn{                       
-	position:absolute;	
-	background-color: black;
-	color:white;
-	border-radius: 5px;
-	border-color: white;
-	font-family: 'Orbitron', sans-serif;
-	cursor: pointer;
-	padding: 5px;
-    bottom:50px;
-	right:35px;
-	opacity: 0;
-
-}
-
-#google-btn:hover{
-	background-color: #333333;
-}
 
 /*Username-Error*/
 
@@ -205,10 +187,11 @@ margin-bottom:20px;
 #Khaledgif{
 position: absolute;
 left: 15px;
+
 }
 
 /*LOGIN ERROR DIV*/
-
+/*
 #LoginErrordiv{
 
  
@@ -233,7 +216,7 @@ left: 15px;
 position: absolute;
 left: 15px;
 }
-
+*/
 /* AB HIER REGISTER-FORM CSS */
 
 #Registration-Heading{
