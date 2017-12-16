@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <!--<link rel="stylesheet" type="text/css" href="css/font-awesome.css">-->
+	<!--<link rel="stylesheet" type="text/css" href="css/font-awesome.css">-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://use.fontawesome.com/c206fc02ad.js"></script>
 	<script src="https://unpkg.com/vue"></script>
@@ -16,88 +16,88 @@
 </head>
 <body>
 
-<script type="text/javascript" src="javascript.js" defer></script>
+	<script type="text/javascript" src="javascript.js" defer></script>
 
 
-<!-- ab hier HTML-Code -->
+	<!-- ab hier HTML-Code -->
 
-<div id="start">
+	<div id="start">
 
-<ul class="FLY-IN Hidden">
-	<li>L</li>
-	<li>E</li>
-	<li>G</li>
-	<li>I</li>
-	<li>T</li>
-	
-</ul>
+		<ul class="FLY-IN Hidden">
+			<li>L</li>
+			<li>E</li>
+			<li>G</li>
+			<li>I</li>
+			<li>T</li>
 
-<button id="Menubutton" class="Loginbutton hiddenButton" v-on:click="loginform">LOGIN</button>
+		</ul>
 
-<!--LoginForm -->
-<div class="form">
-    <i class= "fa fa-user-circle fa fa-car fa-5x" aria-hidden="true"></i>
-	<form id="loginform">
-		<div class="inputform">
-		<input class="logininput" type="text" placeholder="Username" v-model="username">
+		<button id="Menubutton" class="Loginbutton hiddenButton" v-on:click="loginform">LOGIN</button>
+
+		<!--LoginForm -->
+		<div class="form">
+			<i class= "fa fa-user-circle fa fa-car fa-5x" aria-hidden="true"></i>
+			<form id="loginform">
+				<div class="inputform">
+					<input class="logininput" type="text" placeholder="Username" v-model="username">
+				</div>
+				<div class="inputform" id="lastinput">
+					<input class="logininput" type="password" placeholder="Password" v-model="password">
+				</div>
+
+
+
+				<input id="loginsubmit" type="submit" name="submit" value="LOGIN" v-on:click="login">
+
+
+				<p id="toRegisterForm" v-on:click="toRegisterForm">{{RegisterLink}}</p>
+
+
+				<div id="UserErrordiv" v-if="seen">	
+					<p>
+						{{ErrorMessage}}
+					</p>
+					<video id="Khaledgif" width="320" height="240" autoplay loop>
+						<source src="C:\Users\Amir\Desktop\Projekt WT\Gifs\Dj-Khaled.mp4" type="video/mp4">
+						</video>
+
+					</div>
+
+				</form>
+
+			</div>
 		</div>
-		<div class="inputform" id="lastinput">
-		<input class="logininput" type="password" placeholder="Password" v-model="password">
-		</div>
+		<!--RegisterForm-->
+
+		<div id="register-div" transition="register">
+			<p id="Registration-Heading">{{RegHeading}}</p>
+			<form id="registerform">
+				<div class="register-inputform">
+					<input class="registerinput" id= "registername" type="text" placeholder="Username" v-model="username">
+				</div>
+				<div class="register-inputform" id="lastinput-register">
+					<input class="registerinput" id= "registerpw" type="password" placeholder="Password" v-model="password">
+				</div>
 
 
 
-		<input id="loginsubmit" type="submit" name="submit" value="LOGIN" v-on:click="login">
+				<button id="register-submit" v-on:click="register">Register</button>
 
+				<div id="UserErrordiv" v-if="seen">	
+					<p>
+						{{ErrorMessage}}
+					</p>
+					<video id="Khaledgif" width="320" height="240" autoplay loop>
+						<source src="C:\Users\Amir\Desktop\Projekt WT\Gifs\Dj-Khaled.mp4" type="video/mp4">
+						</video>
 
-     <p id="toRegisterForm" v-on:click="toRegisterForm">{{RegisterLink}}</p>
+					</div>
 
-     
-     <div id="UserErrordiv" v-if="seen">	
-       <p>
-      {{ErrorMessage}}
-      </p>
-     <video id="Khaledgif" width="320" height="240" autoplay loop>
-     <source src="C:\Users\Amir\Desktop\Projekt WT\Gifs\Dj-Khaled.mp4" type="video/mp4">
-     </video>
+				</form>
 
-     </div>
+				<i id="backToLogin" class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" v-on:click="backToLogin"></i>
 
-	</form>
-	
-</div>
-</div>
-<!--RegisterForm-->
+			</div>
 
-<div id="register-div" transition="register">
-    <p id="Registration-Heading">{{RegHeading}}</p>
-	<form id="registerform">
-		<div class="register-inputform">
-		<input class="registerinput" id= "registername" type="text" placeholder="Username" v-model="username">
-		</div>
-		<div class="register-inputform" id="lastinput-register">
-		<input class="registerinput" id= "registerpw" type="password" placeholder="Password" v-model="password">
-		</div>
-
-
-
-		<button id="register-submit" v-on:click="register">Register</button>
-
-     <div id="UserErrordiv" v-if="seen">	
-       <p>
-      {{ErrorMessage}}
-      </p>
-     <video id="Khaledgif" width="320" height="240" autoplay loop>
-     <source src="C:\Users\Amir\Desktop\Projekt WT\Gifs\Dj-Khaled.mp4" type="video/mp4">
-     </video>
-
-     </div>
-
-	</form>
-
-	<i id="backToLogin" class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" v-on:click="backToLogin"></i>
-	
-</div>
-
-</body>
-</html>
+		</body>
+		</html>

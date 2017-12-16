@@ -1,35 +1,35 @@
 *{
 
-   margin: 0;
-   padding: 0;
+	margin: 0;
+	padding: 0;
 
 }
 
 body{
 
-background-color: black;
-overflow: hidden;
+	background-color: black;
+	overflow: hidden;
 
 }
 
 .FLY-IN{
 
-list-style: none;
-position: absolute;
-left: 50%;
-top:50%;
-transform: translateX(-50%) translateY(-50%);
+	list-style: none;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform: translateX(-50%) translateY(-50%);
 }
 
 .FLY-IN li{
 
-display: inline-block;
-color:white;
-margin-right: 50px;
-font-family: 'Orbitron', sans-serif;
-font-size: 3em;
-opacity: 1;
-transition: all 2.5s ease;
+	display: inline-block;
+	color:white;
+	margin-right: 50px;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 3em;
+	opacity: 1;
+	transition: all 2.5s ease;
 }
 
 .FLY-IN li:last-Child{
@@ -41,16 +41,16 @@ transition: all 2.5s ease;
 }
 
 .Loginbutton{
-cursor: pointer;	
-background-color: black;
-border: 3px solid white;
-padding: 1px;
-font-family: 'Orbitron', sans-serif;
-color:white;
-position: absolute;
-top: 60%;
-left:49%;
-opacity: 1;
+	cursor: pointer;	
+	background-color: black;
+	border: 3px solid white;
+	padding: 1px;
+	font-family: 'Orbitron', sans-serif;
+	color:white;
+	position: absolute;
+	top: 60%;
+	left:49%;
+	opacity: 1;
 }
 
 .hiddenButton{
@@ -63,28 +63,28 @@ opacity: 1;
 
 .Hidden li:nth-child(1) {
 
-transform: translateX(-200px) translateY(-200px);
+	transform: translateX(-200px) translateY(-200px);
 
 }
 
 .Hidden li:nth-child(2) {
 
-transform: translateX(20px) translateY(-200px);
+	transform: translateX(20px) translateY(-200px);
 	
 }
 .Hidden li:nth-child(3) {
 
-transform: translateX(-150px) translateY(-80px);
+	transform: translateX(-150px) translateY(-80px);
 	
 }
 .Hidden li:nth-child(4) {
 
-transform: translateX(10px) translateY(-200px);
+	transform: translateX(10px) translateY(-200px);
 	
 }
 .Hidden li:nth-child(5) {
 
-transform: translateX(-300px) translateY(200px);
+	transform: translateX(-300px) translateY(200px);
 	
 }
 
@@ -93,8 +93,8 @@ transform: translateX(-300px) translateY(200px);
 
 .form{
 
-    border: 3px solid white;
-    border-radius: 25px;
+	border: 3px solid white;
+	border-radius: 25px;
 	width: 350px;
 	height: 350px;
 	margin: 0 auto;
@@ -125,8 +125,8 @@ i[class= "fa fa-user-circle fa fa-car fa-5x"]{
 
 #loginform p{
 
-    font-family: 'Orbitron', sans-serif;
-   font-size:x-small;
+	font-family: 'Orbitron', sans-serif;
+	font-size:x-small;
 	color:white;
 	text-decoration: underline;
 	cursor: pointer;
@@ -134,30 +134,30 @@ i[class= "fa fa-user-circle fa fa-car fa-5x"]{
 
 .inputform::before{
 
-position: absolute;
-font-family: "FontAwesome";
-content:"\f007";
-font-size: 20px;
-padding-top: 6px;
-padding-left: 5px;
+	position: absolute;
+	font-family: "FontAwesome";
+	content:"\f007";
+	font-size: 20px;
+	padding-top: 6px;
+	padding-left: 5px;
 }
 
 #lastinput::before {
 
-     	content:"\f023";
+	content:"\f023";
 
 }
 
 #loginsubmit{
 	cursor: pointer;	
-background-color: black;
-border: 3px solid white;
-border-radius: 3px;
-padding: 5px;
-font-family: 'Orbitron', sans-serif;
-color:white;
-opacity: 1;
-margin-bottom:20px;
+	background-color: black;
+	border: 3px solid white;
+	border-radius: 3px;
+	padding: 5px;
+	font-family: 'Orbitron', sans-serif;
+	color:white;
+	opacity: 1;
+	margin-bottom:20px;
 }
 
 
@@ -166,27 +166,27 @@ margin-bottom:20px;
 
 #UserErrordiv{
 
- 
-  background:black;
-  width: 400px;
-  height: 50px;
-  position: absolute;
- top:30%;
- right:10%;
+	
+	background:black;
+	width: 400px;
+	height: 50px;
+	position: absolute;
+	top:30%;
+	right:10%;
 
 
 }
 
 #UserErrordiv p{
-  position:absolute;
-  text-align: center;
-  color:white;
-  font-family: 'Orbitron', sans-serif;
+	position:absolute;
+	text-align: center;
+	color:white;
+	font-family: 'Orbitron', sans-serif;
 }
 
 #Khaledgif{
-position: absolute;
-left: 15px;
+	position: absolute;
+	left: 15px;
 
 }
 
@@ -232,8 +232,8 @@ left: 15px;
 
 #register-div{
 
-    border: 3px solid white;
-    border-radius: 25px;
+	border: 3px solid white;
+	border-radius: 25px;
 	width: 350px;
 	height: 350px;
 	margin: 0 auto;
@@ -264,30 +264,30 @@ i[class="fa fa-arrow-circle-left fa-2x"]{
 
 .register-inputform::before{
 
-position: absolute;
-font-family: "FontAwesome";
-content:"\f007";
-font-size: 20px;
-padding-top: 6px;
-padding-left: 5px;
+	position: absolute;
+	font-family: "FontAwesome";
+	content:"\f007";
+	font-size: 20px;
+	padding-top: 6px;
+	padding-left: 5px;
 }
 
 #lastinput-register::before {
 
-     	content:"\f023";
+	content:"\f023";
 
 }
 
 #register-submit{
 	cursor: pointer;	
-background-color: black;
-border: 3px solid white;
-border-radius: 3px;
-padding: 5px;
-font-family: 'Orbitron', sans-serif;
-color:white;
-opacity: 1;
-margin-bottom:20px;
+	background-color: black;
+	border: 3px solid white;
+	border-radius: 3px;
+	padding: 5px;
+	font-family: 'Orbitron', sans-serif;
+	color:white;
+	opacity: 1;
+	margin-bottom:20px;
 }
 
 /*Vue Transitions*/
