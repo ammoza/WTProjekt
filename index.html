@@ -50,7 +50,7 @@
 		<input id="loginsubmit" type="submit" name="submit" value="LOGIN" v-on:click="login">
 
 
-     <p id="toRegisterForm">{{RegisterLink}}</p>
+     <p id="toRegisterForm" v-on:click="toRegisterForm">{{RegisterLink}}</p>
 
      
      <div id="UserErrordiv" v-if="seen">	

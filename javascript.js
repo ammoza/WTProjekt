@@ -4,6 +4,7 @@
 var hostlog = "https://legitjokes.herokuapp.com/api/user/authenticate";
 var hostreg = "https://legitjokes.herokuapp.com/api/user/register";
 var token;
+var coins;
 
 //Log-in Request
 
@@ -23,6 +24,20 @@ data: {
 
 
 methods: {
+
+
+/*
+toRegisterForm: function(){
+
+$('.form').fadeOut(1000);
+setTimeout(function(){
+$("#register-div").animate({opacity: 1}, {duration: 500, queue:false});
+},1500);
+
+
+},
+*/
+
 login: function(e){ 
     e.preventDefault();
 	this.$http.post(hostlog,{username: this.username,password: this.password})
@@ -31,7 +46,9 @@ login: function(e){
         {
 			console.log("Success");
             token = res.body.token;  
+            coins = res.body.token;
             console.log("Token: " +token);
+            console.log("Coins: "+ coins);
 
         }
        if(res.body.Status === "Error") 
@@ -42,11 +59,11 @@ login: function(e){
 
         }
 
-        }
+        });
 
 
 
-        )}}
+        }}
         
 
 });
@@ -155,6 +172,8 @@ var firstVue = new Vue({
 
 
 });
+
+
 
 
 $(document).ready(function(){
