@@ -26,7 +26,8 @@
 
 	<div id="start">
 
-		<ul class="FLY-IN Hidden">
+<!-- v-bind:class="{ FLYIN: active, Hidden: Hidden }" -->
+		<ul class="FLYIN Hidden">
 			<li>L</li>
 			<li>E</li>
 			<li>G</li>
@@ -35,8 +36,9 @@
 
 		</ul>
 
-		<button id="Menubutton" class="Loginbutton hiddenButton" v-on:click="loginform">LOGIN</button>
 
+		<button id="Menubutton" class="Loginbutton hiddenButton" v-on:click="loginform">LOGIN</button>
+      </div>
 		<!--LoginForm -->
 	
 		<div class="form">
@@ -54,7 +56,8 @@
 				<input id="loginsubmit" type="submit" name="submit" value="LOGIN" v-on:click="login">
 
 
-				<p id="toRegisterForm" v-on:click="toRegisterForm">{{RegisterLink}}</p>
+                <!-- v-on:click=toRegisterForm -->
+				<p id="toRegisterForm">{{RegisterLink}}</p>
 
 
 				<div id="UserErrordiv" v-if="seen">	
@@ -70,7 +73,7 @@
 				</form>
 
 			</div>
-		</div>
+		
 	
 		<!--RegisterForm-->
 

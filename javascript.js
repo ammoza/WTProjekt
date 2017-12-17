@@ -28,6 +28,10 @@ var loginform = new Vue({
 login: function(e){ 
     
    e.preventDefault();
+
+
+   console.log("Welcome to the Login");
+
     this.$http.post(hostlog,{username: this.username,password: this.password})
     .then(function(res){
       if(res.body.Status === "Success") 
@@ -60,8 +64,8 @@ $("#register-div").animate({opacity: 1}, {duration: 500, queue:false});
 },1500);
 
 
-}
-*/
+}*/
+
 
 
 }
@@ -88,8 +92,15 @@ var registerform = new Vue ({
 
 
    methods: {
+
     register: function(e){ 
-        e.preventDefault();
+        
+       e.preventDefault();
+
+       console.log("Welcome to the Registration");
+
+
+
         this.$http.post(hostreg,{username: this.username,password: this.password})
         .then(function(res){
             if(res.body.Status === "Success"){
@@ -132,12 +143,19 @@ var firstVue = new Vue({
 
  el: "#start",
 
+/*
+ data:{
+Hidden: true,
+active: true
 
+ },
+*/
  mounted: function(){
 
 
-     setTimeout(function(){
-         $("ul").removeClass('Hidden');
+    setTimeout(function(){
+        $("ul").removeClass('Hidden');
+         //this.$data.Hidden = false;
      },500);
 
 
@@ -145,13 +163,12 @@ var firstVue = new Vue({
          $("#Menubutton").removeClass('hiddenButton');
      },3000);
 
-
  },
 
 
 
  methods:{
-
+ 
      loginform: function(){
 
 
