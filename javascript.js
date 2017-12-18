@@ -1,3 +1,6 @@
+// Session-Storage Elemente
+sessionStorage.setItem('coins', coins);
+sessionStorage.setItem('token', token);
 
 //Host-Adressen und token variable
 
