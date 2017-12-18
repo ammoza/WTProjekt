@@ -57,11 +57,11 @@
 
 
                 <!-- v-on:click=toRegisterForm -->
-				<p id="toRegisterForm">{{RegisterLink}}</p>
+				<p id="toRegisterForm" v-on:click="toRegisterForm">{{RegisterLink}}</p>
 
 
 				<div id="UserErrordiv" v-if="seen">	
-					<p>
+					<p class="ErrorMessage ErrorMessageLogin">
 						{{ErrorMessage}}
 					</p>
 					<video id="Khaledgif" width="320" height="240" autoplay loop>
@@ -77,7 +77,7 @@
 	
 		<!--RegisterForm-->
 
-		<div id="register-div" transition="register">
+		<div id="register-div">
 			<p id="Registration-Heading">{{RegHeading}}</p>
 			<form id="registerform">
 				<div class="register-inputform">
@@ -92,7 +92,7 @@
 				<button id="register-submit" v-on:click="register">Register</button>
 
 				<div id="UserErrordiv" v-if="seen">	
-					<p>
+					<p class="ErrorMessage">
 						{{ErrorMessage}}
 					</p>
 					<video id="Khaledgif" width="320" height="240" autoplay loop>

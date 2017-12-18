@@ -56,18 +56,14 @@ login: function(e){
 
 })
 
-}
+},
 
-/*
+
 toRegisterForm: function(){
 
-$('.form').fadeOut(1000);
-setTimeout(function(){
-$("#register-div").animate({opacity: 1}, {duration: 500, queue:false});
-},1500);
+this.$data.seen = false;
 
-
-}*/
+}
 
 
 
