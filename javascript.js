@@ -2,12 +2,17 @@
 sessionStorage.setItem('coins', coins);
 sessionStorage.setItem('token', token);
 
-//Host-Adressen und token variable
+//Host-Adressen und TOKEN,COINS variable
 
 var hostlog = "https://legitjokes.herokuapp.com/api/user/authenticate";
 var hostreg = "https://legitjokes.herokuapp.com/api/user/register";
 var token;
 var coins;
+
+//ZÄHLER
+
+var failcounterRegistration = 0;  //zählt die Anzahl der fehlgeschlagenen Registrierungsversuche
+var failcounterLogin = 0; //zählt die Anzahl der fehlgeschlagenen Loginversuche 
 
 //Log-in Request
 
@@ -21,7 +26,9 @@ var loginform = new Vue({
        username:"",
        password:"",
        RegisterLink:"Don't have an Account? Click here to Register",
-       ErrorMessage:"Username or password is wrong!"
+       ErrorMessage:"Username or password is wrong!",
+       annoy:false,
+       AnnoyingMessage:""
 
    },
 
@@ -31,9 +38,6 @@ var loginform = new Vue({
 login: function(e){ 
     
    e.preventDefault();
-
-
-   console.log("Welcome to the Login");
 
     this.$http.post(hostlog,{username: this.username,password: this.password})
     .then(function(res){
@@ -48,6 +52,18 @@ login: function(e){
      }
      else if(res.body.Status === "Error") 
      {
+
+        failcounterLogin++;
+        console.log("Number of Login fails: "+failcounterLogin);
+
+        if(failcounterLogin>1){
+          
+          this.$data.annoy=true;
+          this.AnnoyingMessage = this.AnnoyingMessage +" YOU ARE NOT THE SMARTEST";
+        }
+
+
+        console.log();
         this.username = "";
         this.password = "";
         this.$data.seen = true;
@@ -92,6 +108,8 @@ var registerform = new Vue ({
 
    methods: {
 
+//AJAX REQUEST
+
     register: function(e){ 
         
        e.preventDefault();
@@ -107,6 +125,9 @@ var registerform = new Vue ({
 
                 if(res.body.Status === "Error"){
 
+                  failcounterRegistration++;
+                  console.log("Number of Register fails: "+failcounterRegistration);
+
                    this.$data.seen = true;
                    this.username = "";
                    this.password = "";
@@ -114,6 +135,8 @@ var registerform = new Vue ({
 
                }})          
     },
+
+   // VON REGISTER ZURÜCK ZU LOGIN FORM 
 
     backToLogin: function(){
 
@@ -135,8 +158,8 @@ var registerform = new Vue ({
 }
 });
 
-// Mounted-Funktion 
-// LoginForm erscheint nach Button Click
+
+// VUE für ANFANG 
 
 var firstVue = new Vue({
 
@@ -167,7 +190,9 @@ active: true
 
 
  methods:{
- 
+  
+  //VERSCHWINDEN DES STARTBILDSCHIRMS UND ERSCHEINEN DER LOGINFORM
+
      loginform: function(){
 
 
@@ -190,6 +215,10 @@ active: true
 
 });
 
+
+
+
+// JQUERY für den Wechsel von LOGIN zu REGISTER 
 
 
 $(document).ready(function(){

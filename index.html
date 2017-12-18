@@ -7,7 +7,6 @@
 	<meta charset="UTF-8">
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<!--<link rel="stylesheet" type="text/css" href="css/font-awesome.css">-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://use.fontawesome.com/c206fc02ad.js"></script>
 	<script src="https://unpkg.com/vue"></script>
@@ -19,9 +18,8 @@
 	<script type="text/javascript" src="javascript.js" defer></script>
 
 
-	<!-- ab hier HTML-Code -->
 
-
+<!-- ab hier HTML-Code -->
 
 
 	<div id="start">
@@ -58,7 +56,7 @@
 
                 <!-- v-on:click=toRegisterForm -->
 				<p id="toRegisterForm" v-on:click="toRegisterForm">{{RegisterLink}}</p>
-
+                
 
 				<div id="UserErrordiv" v-if="seen">	
 					<p class="ErrorMessage ErrorMessageLogin">
@@ -70,7 +68,11 @@
 
 					</div>
 
+					<p id="Annoying" v-if="annoy">{{AnnoyingMessage}}</p>
+
 				</form>
+
+					
 
 			</div>
 		
@@ -101,11 +103,16 @@
 
 					</div>
 
+					<p id="Annoying" v-if="annoy">{{AnnoyingMessage}}</p>
+
 				</form>
 
 				<i id="backToLogin" class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" v-on:click="backToLogin"></i>
+					
 
 			</div>
+
+
 		
 		</body>
 		</html>

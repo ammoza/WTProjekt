@@ -12,6 +12,8 @@ body{
 
 }
 
+/*ANFANGS-ANIMATION CSS*/
+
 .FLYIN{
 
 	list-style: none;
@@ -161,7 +163,7 @@ i[class= "fa fa-user-circle fa fa-car fa-5x"]{
 }
 
 
-/*Username-Error*/
+/*ERROR-DIVS*/
 
 
 #UserErrordiv{
@@ -195,8 +197,6 @@ left:25px;
 	left: 15px;
 
 }
-
-/*LOGIN ERROR DIV*/
 
 
 /* AB HIER REGISTER-FORM CSS */
@@ -272,4 +272,15 @@ i[class="fa fa-arrow-circle-left fa-2x"]{
 	margin-bottom:20px;
 }
 
+/*Nervige ERROR-AUSGABE*/
 
+#Annoying{
+
+top:0;
+left:0;
+position: relative;
+color: white;
+font-family: 'Orbitron', sans-serif;
+
+
+}
