@@ -9,11 +9,6 @@ var hostreg = "https://legitjokes.herokuapp.com/api/user/register";
 var token;
 var coins;
 
-//ZÄHLER
-
-var failcounterRegistration = 0;  //zählt die Anzahl der fehlgeschlagenen Registrierungsversuche
-var failcounterLogin = 0; //zählt die Anzahl der fehlgeschlagenen Loginversuche 
-
 //Log-in Request
 
 var loginform = new Vue({
@@ -27,8 +22,9 @@ var loginform = new Vue({
        password:"",
        RegisterLink:"Don't have an Account? Click here to Register",
        ErrorMessage:"Username or password is wrong!",
-       annoy:false,
-       AnnoyingMessage:""
+       AnnoyingMessage:"",
+       fails: false,
+       failcounterLogin: 0
 
    },
 
@@ -53,15 +49,39 @@ login: function(e){
      else if(res.body.Status === "Error") 
      {
 
-        failcounterLogin++;
-        console.log("Number of Login fails: "+failcounterLogin);
+        this.$data.failcounterLogin++;
+        console.log("Number of Login fails: "+this.failcounterLogin);
 
-        if(failcounterLogin>1){
-          
-          this.$data.annoy=true;
-          this.AnnoyingMessage = this.AnnoyingMessage +" YOU ARE NOT THE SMARTEST";
+        if(this.$data.failcounterLogin>1){
+      
+           this.$data.fails = true;
+
         }
 
+        switch(this.$data.failcounterLogin){
+          
+          case 2: 
+          this.$data.AnnoyingMessage = "Whats wrong with you ?"
+           break;
+
+          case 3: 
+          this.$data.AnnoyingMessage = "If you don't have an Account click the link !!!"
+           break;
+
+          case 4: 
+          this.$data.AnnoyingMessage = "Do you think this is funny ?"
+           break;
+
+
+          case 5: 
+          this.$data.AnnoyingMessage = "OK, I have nothing to say anymore"
+           break;
+
+          default:
+          this.$data.AnnoyingMessage = ""
+
+
+        }
 
         console.log();
         this.username = "";
@@ -124,9 +144,6 @@ var registerform = new Vue ({
                 console.log("Success");}
 
                 if(res.body.Status === "Error"){
-
-                  failcounterRegistration++;
-                  console.log("Number of Register fails: "+failcounterRegistration);
 
                    this.$data.seen = true;
                    this.username = "";

@@ -274,13 +274,13 @@ i[class="fa fa-arrow-circle-left fa-2x"]{
 
 /*Nervige ERROR-AUSGABE*/
 
-#Annoying{
-
-top:0;
-left:0;
-position: relative;
-color: white;
-font-family: 'Orbitron', sans-serif;
-
+#failDiv{
+ 
+ position:relative;
+ left:0px;
+ top: 100px;
+ font-family: 'Orbitron', sans-serif;
+ padding:40px;
+ color:white;
 
 }

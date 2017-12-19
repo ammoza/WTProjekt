@@ -11,15 +11,10 @@
 	<script src="https://use.fontawesome.com/c206fc02ad.js"></script>
 	<script src="https://unpkg.com/vue"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>
+	<script type="text/javascript" src="javascript.js" defer></script>
 	
 </head>
 <body>
-
-	<script type="text/javascript" src="javascript.js" defer></script>
-
-
-
-<!-- ab hier HTML-Code -->
 
 
 	<div id="start">
@@ -68,7 +63,15 @@
 
 					</div>
 
-					<p id="Annoying" v-if="annoy">{{AnnoyingMessage}}</p>
+					<div id=failDiv v-if="fails">
+
+				    <span>FAILS: </span>
+
+                    <span>{{failcounterLogin}}</span>
+
+					<p id="Annoying">{{AnnoyingMessage}}</p>
+
+					</div>
 
 				</form>
 
@@ -103,8 +106,6 @@
 
 					</div>
 
-					<p id="Annoying" v-if="annoy">{{AnnoyingMessage}}</p>
-
 				</form>
 
 				<i id="backToLogin" class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" v-on:click="backToLogin"></i>
@@ -112,7 +113,5 @@
 
 			</div>
 
-
-		
 		</body>
 		</html>
