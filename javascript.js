@@ -107,6 +107,7 @@ this.$data.fails = false;
 
 });
 
+
 //Account-Registrieren Register-Request
 
 var registerform = new Vue ({
@@ -160,7 +161,8 @@ var registerform = new Vue ({
 
        this.$data.seen = false;
 
-       $("#register-div").animate({opacity: 0}, {duration: 500, queue:false});
+      $("#register-div").animate({opacity: 0}, {duration: 500, queue:false});
+   
 
        setTimeout(function(){
            $(".form").fadeIn(1000);},1000);
@@ -237,17 +239,14 @@ $(document).ready(function(){
 
 
     $("#toRegisterForm").click(function(){
-        $('.form').fadeOut(1000);
+        $('.form').fadeOut(1000)
         setTimeout(function(){
             $("#register-div").animate({opacity: 1}, {duration: 500, queue:false});
 
         },1500);
 
-    })
-
-
-
-});
+    });
+  });
 
 
 
