@@ -83,7 +83,6 @@ login: function(e){
 
         }
 
-        console.log();
         this.username = "";
         this.password = "";
         this.$data.seen = true;
@@ -98,10 +97,10 @@ login: function(e){
 toRegisterForm: function(){
 
 this.$data.seen = false;
+this.$data.failcounterLogin = 0;
+this.$data.fails = false;
 
 }
-
-
 
 }
 
@@ -166,12 +165,7 @@ var registerform = new Vue ({
        setTimeout(function(){
            $(".form").fadeIn(1000);},1000);
 
-       setTimeout(function(){
-           $("#google-btn").fadeIn(1500);},2000);
-
-
-   }
-
+}
 }
 });
 
@@ -181,20 +175,20 @@ var registerform = new Vue ({
 var firstVue = new Vue({
 
  el: "#start",
-
 /*
  data:{
-Hidden: true,
-active: true
 
- },
-*/
+active: true,
+available:true
+
+ },*/
+
  mounted: function(){
 
 
     setTimeout(function(){
         $("ul").removeClass('Hidden');
-         //this.$data.Hidden = false;
+         //this.$data.active = false;
      },500);
 
 
@@ -221,6 +215,7 @@ active: true
             $(".form").css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 'slow')
         },2000);
         $("ul").addClass('Hidden');
+        //this.$data.active = true;
         $("#Menubutton").addClass('hiddenButton');
 
     }
@@ -242,7 +237,7 @@ $(document).ready(function(){
 
 
     $("#toRegisterForm").click(function(){
-        $('.form, #google-btn').fadeOut(1000);
+        $('.form').fadeOut(1000);
         setTimeout(function(){
             $("#register-div").animate({opacity: 1}, {duration: 500, queue:false});
 

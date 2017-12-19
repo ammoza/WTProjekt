@@ -198,6 +198,14 @@ left:25px;
 
 }
 
+.Errordiv-enter-active, .Errordiv-leave-active{
+  transition: opacity 2s ease-out;
+}
+
+.Errordiv-enter, .Errordiv-leave-to{
+
+	opacity: 0;
+}
 
 /* AB HIER REGISTER-FORM CSS */
 
