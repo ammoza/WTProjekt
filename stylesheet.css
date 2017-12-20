@@ -248,7 +248,11 @@ i[class="fa fa-arrow-circle-left fa-2x"]{
 	cursor: pointer;
 	
 }
+#backToLogin:hover{
 
+transform: scale(1.2);
+
+}
 
 .register-inputform::before{
 

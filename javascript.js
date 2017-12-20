@@ -125,7 +125,8 @@ var registerform = new Vue ({
        username:"",
        password:"" ,
        RegHeading:"Create an Account",
-       ErrorMessage:"Name is already used take another one !"
+       ErrorMessage:"Name is already used take another one !",
+       success: false
 
    },
 
@@ -139,15 +140,28 @@ var registerform = new Vue ({
         
        e.preventDefault();
 
-       console.log("Welcome to the Registration");
 
         this.$http.post(hostreg,{username: this.username,password: this.password})
         .then(function(res){
 
             if(res.body.Status === "Success"){
                 
-                console.log("Success");}
+                console.log("Success");
 
+                if(this.$data.seen = true){
+
+                  this.$data.seen = false; }
+
+              $("#register-div").animate({opacity: 0}, {duration: 500, queue:false});
+                  
+               setTimeout(function(){
+                  this.$data.success= true;},700);
+
+
+
+               };
+                  
+                
                 if(res.body.Status === "Error"){
 
                    this.$data.seen = true;                
@@ -221,8 +235,8 @@ hidden:true
             $(".form").css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 'slow')
         },2000);
 
-        //$("ul").addClass('Hidden');
-        firstVue.$data.hidden = true;
+        $("ul").addClass('Hidden');
+        //firstVue.$data.hidden = true;
         $("#Menubutton").addClass('hiddenButton');
 
     }
