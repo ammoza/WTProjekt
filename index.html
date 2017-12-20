@@ -18,8 +18,8 @@
 
 	<div id="start">
 
-<!-- v-bind:class="{ FLYIN: active, Hidden: Hidden }" class="FLYIN Hidden" -->
-		<ul class="FLYIN Hidden">
+<!-- v-bind:class="{ FLYIN: active, Hidden: hidden }" class="FLYIN Hidden" -->
+		<ul class="FLYIN Hidden" v-bind:class="{ FLYIN: active, Hidden: hidden }" >
 			<li>L</li>
 			<li>E</li>
 			<li>G</li>
@@ -34,19 +34,21 @@
 		<!--LoginForm -->
 	
 		<div class="form">
+
 			<i class= "fa fa-user-circle fa fa-car fa-5x" aria-hidden="true"></i>
+
 			<form id="loginform">
+
 				<div class="inputform">
 					<input class="logininput" type="text" placeholder="Username" v-model="username">
 				</div>
+
 				<div class="inputform" id="lastinput">
 					<input class="logininput" type="password" placeholder="Password" v-model="password">
 				</div>
 
 
-
 				<input id="loginsubmit" type="submit" name="submit" value="LOGIN" v-on:click="login">
-
 
                 <!-- v-on:click=toRegisterForm -->
 				<p id="toRegisterForm" v-on:click="toRegisterForm">{{RegisterLink}}</p>
@@ -55,6 +57,7 @@
                 <transition name="Errordiv">
 
 				<div id="UserErrordiv" v-if="seen">	
+
 					<p class="ErrorMessage ErrorMessageLogin">
 						{{ErrorMessage}}
 					</p>
@@ -65,6 +68,9 @@
 					</div>
 
                 </transition>
+
+                <transition name="bounce">
+
 					<div id=failDiv v-if="fails">
 
 				    <span>FAILS: </span>
@@ -74,6 +80,8 @@
 					<p id="Annoying">{{AnnoyingMessage}}</p>
 
 					</div>
+
+				</transiton>	
 
 				</form>
 
@@ -89,19 +97,21 @@
 			<p id="Registration-Heading">{{RegHeading}}</p>
 
 			<form id="registerform">
+
 				<div class="register-inputform">
 					<input class="registerinput" id= "registername" type="text" placeholder="Username" v-model="username">
 				</div>
+
 				<div class="register-inputform" id="lastinput-register">
 					<input class="registerinput" id= "registerpw" type="password" placeholder="Password" v-model="password">
 				</div>
 
-
-
 				<button id="register-submit" v-on:click="register">Register</button>
 
              <transition name="Errordiv">
+
 				<div id="UserErrordiv" v-if="seen">	
+
 					<p class="ErrorMessage">
 						{{ErrorMessage}}
 					</p>
@@ -110,13 +120,13 @@
 						</video>
 
 					</div>
+
 				</transition>
 
 				</form>
 
 				<i id="backToLogin" class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" v-on:click="backToLogin"></i>
 				
-
 			</div>
 
 		</body>

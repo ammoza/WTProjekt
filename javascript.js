@@ -37,8 +37,12 @@ login: function(e){
 
     this.$http.post(hostlog,{username: this.username,password: this.password})
     .then(function(res){
+
       if(res.body.Status === "Success") 
       {
+
+         failcounterLogin = 0;
+         this.$data.fails = false;
          console.log("Success");
          token = res.body.token;  
          coins = res.body.coins;
@@ -50,6 +54,7 @@ login: function(e){
      {
 
         this.$data.failcounterLogin++;
+
         console.log("Number of Login fails: "+this.failcounterLogin);
 
         if(this.$data.failcounterLogin>1){
@@ -136,16 +141,16 @@ var registerform = new Vue ({
 
        console.log("Welcome to the Registration");
 
-
-
         this.$http.post(hostreg,{username: this.username,password: this.password})
         .then(function(res){
+
             if(res.body.Status === "Success"){
+                
                 console.log("Success");}
 
                 if(res.body.Status === "Error"){
 
-                   this.$data.seen = true;
+                   this.$data.seen = true;                
                    this.username = "";
                    this.password = "";
                    console.log("Error");
@@ -157,11 +162,9 @@ var registerform = new Vue ({
 
     backToLogin: function(){
 
-
-
        this.$data.seen = false;
 
-      $("#register-div").animate({opacity: 0}, {duration: 500, queue:false});
+       $("#register-div").animate({opacity: 0}, {duration: 500, queue:false});
    
 
        setTimeout(function(){
@@ -177,20 +180,20 @@ var registerform = new Vue ({
 var firstVue = new Vue({
 
  el: "#start",
-/*
+
  data:{
 
 active: true,
-available:true
+hidden:true
 
- },*/
+ },
 
  mounted: function(){
 
 
     setTimeout(function(){
-        $("ul").removeClass('Hidden');
-         //this.$data.active = false;
+       $("ul").removeClass('Hidden');
+         //firstVue.$data.hidden = false;
      },500);
 
 
@@ -208,16 +211,18 @@ available:true
 
      loginform: function(){
 
-
         $("#Menubutton").fadeToggle();
+
         setTimeout(function(){
             $("ul").fadeToggle("slow");
         },1000);
+
         setTimeout(function(){
             $(".form").css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 'slow')
         },2000);
-        $("ul").addClass('Hidden');
-        //this.$data.active = true;
+
+        //$("ul").addClass('Hidden');
+        firstVue.$data.hidden = true;
         $("#Menubutton").addClass('hiddenButton');
 
     }
@@ -239,7 +244,9 @@ $(document).ready(function(){
 
 
     $("#toRegisterForm").click(function(){
+
         $('.form').fadeOut(1000)
+
         setTimeout(function(){
             $("#register-div").animate({opacity: 1}, {duration: 500, queue:false});
 
