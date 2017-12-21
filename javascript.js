@@ -198,7 +198,8 @@ var firstVue = new Vue({
 active: true,
 hidden:true,
 hiddenbtn:true,
-loginbtn:true
+loginbtn:true,
+menubutton:true,
 
  },
 
@@ -206,13 +207,11 @@ loginbtn:true
 
 
     setTimeout(function(){
-       //$("ul").removeClass('Hidden');
          firstVue.$data.hidden = false;
      },500);
 
 
      setTimeout(function(){
-         //$("#Menubutton").removeClass('hiddenButton');
          firstVue.$data.hiddenbtn = false;
      },3000);
 
@@ -226,7 +225,7 @@ loginbtn:true
 
      loginform: function(){
 
-        $("#Menubutton").fadeToggle();
+        firstVue.$data.menubutton = false;
 
         setTimeout(function(){
             $("ul").fadeToggle("slow");
@@ -236,9 +235,8 @@ loginbtn:true
             $(".form").css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 'slow')
         },2000);
 
-       // $("ul").addClass('Hidden');
         firstVue.$data.hidden = true;
-        //$("#Menubutton").addClass('hiddenButton');
+     
         firstVue.$data.hiddenbtn = true;
 
     }

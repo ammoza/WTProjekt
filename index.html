@@ -18,7 +18,7 @@
 
 	<div id="start">
 
-<!-- v-bind:class="{ FLYIN: active, Hidden: hidden }" class="FLYIN Hidden" -->
+
 		<ul v-bind:class="{ FLYIN: active, Hidden: hidden }" >
 			<li>L</li>
 			<li>E</li>
@@ -28,8 +28,13 @@
 
 		</ul>
 
-<!-- class="Loginbutton hiddenButton" -->
-		<button id="Menubutton" v-bind:class="{ Loginbutton: loginbtn, hiddenButton: hiddenbtn}" v-on:click="loginform">LOGIN</button>
+     <transition name="menubutton">
+
+		<button id="Menubutton" v-bind:class="{ Loginbutton: loginbtn, hiddenButton: hiddenbtn}" v-on:click="loginform" v-if="menubutton">LOGIN</button>
+
+   </transition>
+
+
       </div>
 		<!--LoginForm -->
 	
