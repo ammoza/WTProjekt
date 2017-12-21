@@ -290,11 +290,14 @@ transform: scale(1.2);
 
 #registerSuccess{
 
- margin: 0 auto;
-border: 5px solid white;
-
+position: fixed;
+top:50%;
+right:50%;
 }
 
+#registerSuccess image{
+
+}
 
 /*Nervige ERROR-AUSGABE*/
 

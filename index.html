@@ -28,38 +28,38 @@
 
 		</ul>
 
-     <transition name="menubutton">
+		<transition name="menubutton">
 
-		<button id="Menubutton" v-bind:class="{ Loginbutton: loginbtn, hiddenButton: hiddenbtn}" v-on:click="loginform" v-if="menubutton">LOGIN</button>
+			<button id="Menubutton" v-bind:class="{ Loginbutton: loginbtn, hiddenButton: hiddenbtn}" v-on:click="loginform" v-if="menubutton">LOGIN</button>
 
-   </transition>
+		</transition>
 
 
-      </div>
-		<!--LoginForm -->
+	</div>
+	<!--LoginForm -->
 	
-		<div class="form">
+	<div class="form">
 
-			<i class= "fa fa-user-circle fa fa-car fa-5x" aria-hidden="true"></i>
+		<i class= "fa fa-user-circle fa fa-car fa-5x" aria-hidden="true"></i>
 
-			<form id="loginform">
+		<form id="loginform">
 
-				<div class="inputform">
-					<input class="logininput" type="text" placeholder="Username" v-model="username">
-				</div>
+			<div class="inputform">
+				<input class="logininput" type="text" placeholder="Username" v-model="username">
+			</div>
 
-				<div class="inputform" id="lastinput">
-					<input class="logininput" type="password" placeholder="Password" v-model="password">
-				</div>
+			<div class="inputform" id="lastinput">
+				<input class="logininput" type="password" placeholder="Password" v-model="password">
+			</div>
 
 
-				<input id="loginsubmit" type="submit" name="submit" value="LOGIN" v-on:click="login">
+			<input id="loginsubmit" type="submit" name="submit" value="LOGIN" v-on:click="login">
 
-                <!-- v-on:click=toRegisterForm -->
-				<p id="toRegisterForm" v-on:click="toRegisterForm">{{RegisterLink}}</p>
-                
+			<!-- v-on:click=toRegisterForm -->
+			<p id="toRegisterForm" v-on:click="toRegisterForm">{{RegisterLink}}</p>
 
-                <transition name="Errordiv">
+
+			<transition name="Errordiv">
 
 				<div id="UserErrordiv" v-if="seen">	
 
@@ -72,33 +72,34 @@
 
 					</div>
 
-                </transition>
+				</transition>
 
-                <transition name="bounce">
+				<transition name="bounce">
 
 					<div id=failDiv v-if="fails">
 
-				    <span>FAILS: </span>
+						<span>FAILS: </span>
 
-                    <span>{{failcounterLogin}}</span>
+						<span>{{failcounterLogin}}</span>
 
-					<p id="Annoying">{{AnnoyingMessage}}</p>
+						<p id="Annoying">{{AnnoyingMessage}}</p>
 
 					</div>
 
 				</transiton>	
 
-				</form>
+			</form>
 
-					
 
-			</div>
+
+		</div>
 		
-	
+
 		<!--RegisterForm-->
-     
+		<div id="RegisterVue">
+
 		<div id="register-div">
-	
+
 			<p id="Registration-Heading">{{RegHeading}}</p>
 
 			<form id="registerform">
@@ -113,35 +114,38 @@
 
 				<button id="register-submit" v-on:click="register">Register</button>
 
-             <transition name="Errordiv">
+				<transition name="Errordiv">
 
-				<div id="UserErrordiv" v-if="seen">	
+					<div id="UserErrordiv" v-if="seen">	
 
-					<p class="ErrorMessage">
-						{{ErrorMessage}}
-					</p>
-					<video id="Khaledgif" width="320" height="240" autoplay loop>
-						<source src="C:\Users\Amir\Desktop\Projekt WT\Gifs\Dj-Khaled.mp4" type="video/mp4">
-						</video>
+						<p class="ErrorMessage">
+							{{ErrorMessage}}
+						</p>
+						<video id="Khaledgif" width="320" height="240" autoplay loop>
+							<source src="C:\Users\Amir\Desktop\Projekt WT\Gifs\Dj-Khaled.mp4" type="video/mp4">
+							</video>
 
-					</div>
+						</div>
 
-				</transition>
+					</transition>
 
+					</form>
 
-            <div id="registerSuccess" v-if="success">
-               
-               <video id="ExplosionGif" width="200" height="300" autoplay>
-               	<source src="C:\Users\Amir\Desktop\Projekt WT\Gifs\giphy.mp4" type="video/mp4">
-              </video>
+					<i id="backToLogin" class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" v-on:click="backToLogin"></i>
 
-            </div>	
+				</div>
 
-				</form>
+				<transition>
 
-				<i id="backToLogin" class="fa fa-arrow-circle-left fa-2x" aria-hidden="true" v-on:click="backToLogin"></i>
-				
+				<div id="registerSuccess" v-if="success">
+
+							<image src="C:\Users\Amir\Desktop\Projekt WT\Gifs\graphics-explosions-210621.gif" type="image/gif">
+							
+						</div>	
+
+			   </transition>
+
 			</div>
 
-		</body>
-		</html>
+			</body>
+			</html>

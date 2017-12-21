@@ -118,9 +118,10 @@ this.$data.fails = false;
 var registerform = new Vue ({
 
 
-    el: "#register-div",
+    el: "#RegisterVue",
     data: {
 
+       regdiv:true,
        seen: false,
        username:"",
        password:"" ,
@@ -154,11 +155,14 @@ var registerform = new Vue ({
 
                   $("#register-div").animate({opacity: 0}, {duration: 500, queue:false});
                   
-               setTimeout(function(){
-                  registerform.$data.success= true;},700);
+               setTimeout(()=>{
+                  this.$data.success= true;},700);
 
-               };
-                  
+               setTimeout(()=>{
+                  this.$data.success= false;},3300);
+
+
+               }      
                 
                 if(res.body.Status === "Error"){
 
@@ -176,9 +180,10 @@ var registerform = new Vue ({
 
        this.$data.seen = false;
 
-       $("#register-div").animate({opacity: 0}, {duration: 500, queue:false});
-   
+       
 
+       $("#register-div").animate({opacity: 0}, {duration: 500, queue:false});
+       
        setTimeout(function(){
            $(".form").fadeIn(1000);},1000);
 
