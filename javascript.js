@@ -38,7 +38,7 @@ login: function(e){
     this.$http.post(hostlog,{username: this.username,password: this.password})
     .then(function(res){
 
-      if(res.body.Status === "Success") 
+      if(res.body.Status === "Ok") 
       {
 
          failcounterLogin = 0;
@@ -144,7 +144,7 @@ var registerform = new Vue ({
         this.$http.post(hostreg,{username: this.username,password: this.password})
         .then(function(res){
 
-            if(res.body.Status === "Success"){
+            if(res.body.Status === "Ok"){
                 
                 console.log("Success");
 
@@ -152,12 +152,10 @@ var registerform = new Vue ({
 
                   this.$data.seen = false; }
 
-              $("#register-div").animate({opacity: 0}, {duration: 500, queue:false});
+                  $("#register-div").animate({opacity: 0}, {duration: 500, queue:false});
                   
                setTimeout(function(){
-                  this.$data.success= true;},700);
-
-
+                  registerform.$data.success= true;},700);
 
                };
                   
