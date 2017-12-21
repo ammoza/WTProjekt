@@ -19,7 +19,7 @@
 	<div id="start">
 
 <!-- v-bind:class="{ FLYIN: active, Hidden: hidden }" class="FLYIN Hidden" -->
-		<ul class="FLYIN Hidden" v-bind:class="{ FLYIN: active, Hidden: hidden }" >
+		<ul v-bind:class="{ FLYIN: active, Hidden: hidden }" >
 			<li>L</li>
 			<li>E</li>
 			<li>G</li>
@@ -28,8 +28,8 @@
 
 		</ul>
 
-
-		<button id="Menubutton" class="Loginbutton hiddenButton" v-on:click="loginform">LOGIN</button>
+<!-- class="Loginbutton hiddenButton" -->
+		<button id="Menubutton" v-bind:class="{ Loginbutton: loginbtn, hiddenButton: hiddenbtn}" v-on:click="loginform">LOGIN</button>
       </div>
 		<!--LoginForm -->
 	

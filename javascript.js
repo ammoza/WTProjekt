@@ -196,7 +196,9 @@ var firstVue = new Vue({
  data:{
 
 active: true,
-hidden:true
+hidden:true,
+hiddenbtn:true,
+loginbtn:true
 
  },
 
@@ -204,13 +206,14 @@ hidden:true
 
 
     setTimeout(function(){
-       $("ul").removeClass('Hidden');
-         //firstVue.$data.hidden = false;
+       //$("ul").removeClass('Hidden');
+         firstVue.$data.hidden = false;
      },500);
 
 
      setTimeout(function(){
-         $("#Menubutton").removeClass('hiddenButton');
+         //$("#Menubutton").removeClass('hiddenButton');
+         firstVue.$data.hiddenbtn = false;
      },3000);
 
  },
@@ -233,9 +236,10 @@ hidden:true
             $(".form").css({opacity: 0, visibility: "visible"}).animate({opacity: 1}, 'slow')
         },2000);
 
-        $("ul").addClass('Hidden');
-        //firstVue.$data.hidden = true;
-        $("#Menubutton").addClass('hiddenButton');
+       // $("ul").addClass('Hidden');
+        firstVue.$data.hidden = true;
+        //$("#Menubutton").addClass('hiddenButton');
+        firstVue.$data.hiddenbtn = true;
 
     }
     
