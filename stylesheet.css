@@ -293,9 +293,8 @@ transform: scale(1.2);
 position: fixed;
 top:50%;
 right:50%;
-}
-
-#registerSuccess image{
+margin-top: -100px;
+margin-right: -100px;
 
 }
 

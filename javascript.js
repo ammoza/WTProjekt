@@ -161,7 +161,6 @@ var registerform = new Vue ({
                setTimeout(()=>{
                   this.$data.success= false;},3300);
 
-
                }      
                 
                 if(res.body.Status === "Error"){
