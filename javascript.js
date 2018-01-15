@@ -48,6 +48,7 @@ login: function(e){
          coins = res.body.coins;
          console.log("Token: " +token);
          console.log("Coins: "+ coins);
+         window.location.replace("Home.html");
 
      }
      else if(res.body.Status === "Error") 
@@ -160,6 +161,9 @@ var registerform = new Vue ({
 
                setTimeout(()=>{
                   this.$data.success= false;},3300);
+
+               setTimeout(()=>{
+                 window.location.replace("Home.html")},3500);
 
                }      
                 
