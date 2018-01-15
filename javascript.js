@@ -1,6 +1,6 @@
 // Session-Storage Elemente
-sessionStorage.setItem('coins', coins);
-sessionStorage.setItem('token', token);
+localStorage.setItem('coins', coins);
+localStorage.setItem('token', token);
 
 //Host-Adressen und TOKEN,COINS variable
 
@@ -38,6 +38,7 @@ login: function(e){
     this.$http.post(hostlog,{username: this.username,password: this.password})
     .then(function(res){
 
+      
       if(res.body.Status === "Ok") 
       {
 
@@ -48,6 +49,8 @@ login: function(e){
          coins = res.body.coins;
          console.log("Token: " +token);
          console.log("Coins: "+ coins);
+         localStorage.setItem('coins', coins);
+         localStorage.setItem('token', token);
          window.location.replace("Home.html");
 
      }
@@ -149,6 +152,12 @@ var registerform = new Vue ({
             if(res.body.Status === "Ok"){
                 
                 console.log("Success");
+
+                  token = res.body.token;  
+                  coins = res.body.coins;
+                  localStorage.setItem('coins', coins);
+                  localStorage.setItem('token', token);
+
 
                 if(this.$data.seen = true){
 
